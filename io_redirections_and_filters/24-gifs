@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name '*.gif' -exec sh -c $'for f do\necho "${f##*/}" | cut -d. -f1\ndone' sh {} + | sort -f
+find . -type f -name '*.gif' -exec sh -c 'for f do f=${f##*/}; echo "${f%.gif}"; done' sh {} + | sort -f
