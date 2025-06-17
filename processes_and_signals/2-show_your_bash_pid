@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script shows lines containing 'bash' processes (exclude pgrep)
+ps aux | grep bash

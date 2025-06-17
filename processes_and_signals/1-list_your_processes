@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script lists all running processes for all users with hierarchy
+ps -axo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest
