@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Stops 4-to_infinity_and_beyond process without using kill or killall
+# Stops the 4-to_infinity_and_beyond process without using kill or killall
 
-# Get PIDs of processes running 4-to_infinity_and_beyond
-pids=$(pgrep -f 4-to_infinity_and_beyond)
+pid=$(pgrep -f 4-to_infinity_and_beyond)
 
-for pid in $pids; do
-  # Using /proc filesystem to send SIGTERM (signal 15)
-  echo 15 > /proc/$pid/signal
-done
+if [ -n "$pid" ]; then
+  echo "Terminating PID: $pid"
+  echo > /proc/"$pid"/fd/0
+fi
+
