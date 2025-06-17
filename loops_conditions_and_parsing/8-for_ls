@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# List files and display only part after first dash
+
+for file in *; do
+  if [[ "$file" == *-* && ! "$file" =~ ^\..* ]]; then
+    echo "${file#*-}"
+  fi
+done
+
